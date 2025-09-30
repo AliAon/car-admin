@@ -3,7 +3,6 @@ import SideBar from "../common/side-bar";
 import Navbar from "../common/nav-bar";
 import { Outlet } from "react-router-dom";
 
-
 function DashboardLayout() {
   const [open, setOpen] = useState(false);
   const handleDrawer = () => {
@@ -25,8 +24,7 @@ function DashboardLayout() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const user=localStorage.getItem('user')
-
+  const user = localStorage.getItem("user");
 
   return (
     <div className="flex">
@@ -35,7 +33,7 @@ function DashboardLayout() {
         <Navbar data={user} handleDrawer={handleDrawer} open={open} />
 
         <div className="h-[calc(100vh-82px)] overflow-y-auto pr-5 pl-5 py-5 lg:pr-10 lg:py-8 lg:pl-[100px] xl:pl-10 bg-[#181818]">
-          {<Outlet/>}
+          {<Outlet />}
         </div>
       </div>
     </div>
